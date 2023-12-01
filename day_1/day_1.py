@@ -35,6 +35,16 @@ replacing = {
     "nine" : "nninee"
 }
 
+one_mapping = {"one" : "o1e",
+           "two" : "t2o",
+           "three" : "t3e",
+           "four" : "f4r",
+           "five" : "f5e",
+           "six" : "s6x",
+           "seven" : "s7n",
+           "eight" : "e8t",
+           "nine" : "n9e"}
+
 def part_1(lines: list) -> int:
     total = 0
     for line in lines:
@@ -53,8 +63,18 @@ def part_2(lines: list, mapping: dict, replacing: dict) -> int:
         total += 10*digits[0] + digits[-1]
     return total
 
+def part_2_better(lines: list, mapping:dict) -> int:
+    total = 0
+    for line in lines:
+        for word, newword in mapping.items():
+            line = line.replace(word,newword)
+        digits = [int(c) for c in line if c.isdigit()]
+        total += 10*digits[0] + digits[-1]
+    return total
+
 if __name__ == "__main__":
     assert part_1(test1)==142, "Part 1 failed."
     print(f"Part 1: {part_1(lines)}")
     assert part_2(test2,mapping,replacing)==281, "Part 2 failed."
     print(f"Part 2: {part_2(lines, mapping, replacing)}")
+    print(f"Part 2 better: {part_2_better(lines, one_mapping)}")
