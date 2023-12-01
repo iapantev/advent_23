@@ -1,3 +1,7 @@
+'''
+Let's do this one the easy way
+'''
+
 with open("./day_1/day_1_1.txt", "r") as f:
     lines = f.readlines()
 
