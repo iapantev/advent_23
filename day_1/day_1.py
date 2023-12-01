@@ -17,6 +17,7 @@ mapping = {"one" : "1",
            "seven" : "7",
            "eight" : "8",
            "nine" : "9"}
+
 # Digit words to not remove 
 replacing = {
     "one" : "oonee",
@@ -29,6 +30,7 @@ replacing = {
     "eight" : "eeightt",
     "nine" : "nninee"
 }
+
 def part_1(lines: list) -> int:
     total = 0
     for line in lines:
