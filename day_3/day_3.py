@@ -8,9 +8,10 @@ from operator import mul
 
 with open("./day_3/day_3_1.txt","r") as f:
     lines = [i.strip() for i in f.readlines()]
-    numbs = [[None,None,0,[]]]
+    numbs = []
     symbs = []
     for lidx,line in enumerate(lines):
+        numbs.append([None,None,0,[]])
         for cidx,char in enumerate(line):
             if char.isdigit():
                 numbs[-1][0] = lidx
