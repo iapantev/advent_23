@@ -14,8 +14,9 @@ def recurse(nums):
         return recurse(diffs)+nums[-1]
 
 def recurse2(nums):
-    diffs = [int(i-j) for i,j in zip(nums[1:],nums[:-1])]
-    if reduce(__eq__,nums) and diffs[-1]==0:
+    diffs = [-int(i-j) for i,j in zip(nums[:-1],nums[1:])]
+    # print(f"{nums[::-1]} -> {diffs[::-1]}")
+    if all(list(map(__eq__,diffs,[0]*len(diffs)))):
         return nums[-1]
     else:
         return nums[-1]+recurse(diffs)
