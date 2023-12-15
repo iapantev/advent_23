@@ -65,22 +65,7 @@ def part2(data):
                     print(i-2*cycle_len-offset)
                     return score_history[int(offset+(1e9-offset+1)%(cycle_len-1))]
         i+=1
-    #     if score_current not in gaps:
-    #         gaps[score_current] = [i]
-    #     else:
-    #         gaps[score_current].append(i)
-    #         if len(gaps[score_current])>=5 and reduce(__eq__,[i-j for i,j in zip(gaps[score_current][1:],gaps[score_current][:-1])][:-5],gaps[score_current][-1]):
-    #             offset = gaps[score_current][0]-1
-    #             cycle_length = gaps[score_current][-2]-gaps[score_current][-3]
-    #             achieved = score_history[int(1e9%cycle_length)+offset-1]
-    #             print(f"Offset: {offset}")
-    #             print(f"Cycle length: {cycle_length}")
-    #             break
-    #     # print(*current,sep="\n")
-    #     i+=1
-    # for idx,score in zip(range(offset-cycle_length,offset+2*cycle_length+1),score_history[offset-cycle_length:offset+2*cycle_length+1]):
-    #     print(idx, score, sep=" : ")
-    # return achieved
+    return 0
 
 if __name__ == "__main__":
     print(f"Part 1: {part1(data)}")
