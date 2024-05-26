@@ -16,7 +16,8 @@ with open("./day_17/day_17_1.txt") as f:
     #Worst case
     maxloss = sum(map(sum,data))
 
-def addLoss()
+def addLoss():
+    pass
 
 def part1(data:list[list]) -> int:
     losses = [maxloss]
@@ -24,7 +25,7 @@ def part1(data:list[list]) -> int:
         if x==0 and y==0:
             losses[y][x] = step(0,0)
         elif x==0 and y>0:
-            losses[y][x] = 
+            losses[y][x] = step(1,2) #TODO: this is random
         pass
 
 if __name__ == "__main__":
